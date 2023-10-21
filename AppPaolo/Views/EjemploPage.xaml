@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="AppPaolo.Views.EjemploPage">
+    <ContentPage.Content>
+        <StackLayout
+            Orientation="Vertical" Padding="30">
+            <Label
+                Text="{Binding Nombre}"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="CenterAndExpand" />
+
+            <Switch
+                IsToggled="{Binding EstaApagado}"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="CenterAndExpand" />
+
+            <Label
+                Text="{Binding color}"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="FillAndExpand" 
+                BackgroundColor="Aqua"/>
+
+            <Button
+                Text="Click"
+                Command="{Binding PressCommand}"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="CenterAndExpand" />
+
+            <Label
+                Text="{Binding Persona1.Nombre}"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="CenterAndExpand" />
+            
+            <Label
+                Text="{Binding Persona1.Edad}"
+                FontSize="100"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="CenterAndExpand" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
