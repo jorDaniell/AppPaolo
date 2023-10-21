@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace AppPaolo.ViewModels {
-    internal class LoginViewModel {
+﻿namespace AppPaolo.ViewModels {
+    public class LoginViewModel : BaseViewModel {
+      
     }
 }

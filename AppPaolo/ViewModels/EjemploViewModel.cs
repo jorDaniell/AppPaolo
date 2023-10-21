@@ -1,27 +1,19 @@
 ﻿using AppPaolo.Models;
-using AppPaolo.Views;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace AppPaolo.ViewModels {
-    public class EjemploViewModel {
+    public class EjemploViewModel : BaseViewModel {      
 
-        private string color;
         public string Nombre { get; set; }
         public bool EstaApagado { get; set; }
         public ICommand PressCommand { get; set; }
-        public PersonaModel Persona1{ get; set; }
+        public PersonaModel Persona1 { get; set; }
 
 
-
-        public EjemploViewModel()
-        {
+        public EjemploViewModel() {
             Nombre = "Paolo";
             EstaApagado = true;
-            color = "Verde";
             PressCommand = new Command(Press);
             Persona1 = new PersonaModel("Jorge", 36);
         }
@@ -29,7 +21,11 @@ namespace AppPaolo.ViewModels {
         private async void Press() {
             //linea 1 
             //linea 2 
-            await App.Current.MainPage.Navigation.PushAsync(new SegundaPage());
+            //await App.Current.MainPage.Navigation.PushAsync(new SegundaPage());
+            Nombre = "David";
+            EstaApagado = false;
+            Persona1.Edad = 100;
+            Persona1.Nombre = "Otro nombre";
         }
     }
 }

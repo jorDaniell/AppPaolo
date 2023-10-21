@@ -16,11 +16,7 @@
                 VerticalOptions="CenterAndExpand"
                 HorizontalOptions="CenterAndExpand" />
 
-            <Label
-                Text="{Binding color}"
-                VerticalOptions="CenterAndExpand"
-                HorizontalOptions="FillAndExpand" 
-                BackgroundColor="Aqua"/>
+           
 
             <Button
                 Text="Click"
