@@ -8,7 +8,7 @@ namespace AppPaolo {
         public App() {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new EjemploPage());
+            MainPage = new NavigationPage(new LoginPage());
         }
 
         protected override void OnStart() {
