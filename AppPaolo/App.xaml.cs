@@ -1,4 +1,5 @@
 ﻿using AppPaolo.Views;
+using AppPaolo.Views.Todo;
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -8,7 +9,7 @@ namespace AppPaolo {
         public App() {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new LoginPage());
+            MainPage = new NavigationPage(new TodoPage());
         }
 
         protected override void OnStart() {

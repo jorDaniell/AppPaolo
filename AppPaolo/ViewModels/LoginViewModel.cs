@@ -1,5 +1,6 @@
 ﻿using AppPaolo.Models.Login;
 using AppPaolo.Views;
+using AppPaolo.Views.Todo;
 using System.Windows.Input;
 using Xamarin.Forms;
 
@@ -20,14 +21,16 @@ namespace AppPaolo.ViewModels {
                 await App.Current.MainPage.DisplayAlert("", "Datos vacios", "ok");
             }
         }
-
+       
         private async void Login() {
             LoginResponse response = await _httpHelper.PostLoginAsync(DatosLogin);
 
             if(response is null) { //datos incorrectos
                 await App.Current.MainPage.DisplayAlert("", "Datos incorrectos", "ok");
             } else { //Datos correctos 
-                await App.Current.MainPage.Navigation.PushAsync(new SegundaPage());
+
+                await App.Current.MainPage.Navigation.PushAsync(new TodoPage());
+                //await App.Current.MainPage.Navigation.PushAsync(new SegundaPage(response.Data.FullName));
             }
         }
 

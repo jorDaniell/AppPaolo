@@ -1,4 +1,5 @@
 ﻿using AppPaolo.Models.Login;
+using AppPaolo.Models.Todo;
 using AppPaolo.Utils;
 using Newtonsoft.Json;
 using System;
@@ -40,6 +41,27 @@ namespace AppPaolo.Data
             }
 
             return loginResponse;
+        }
+
+        public async Task<List<TodoModel>> GetTodoList() {
+
+            List<TodoModel> listResponse = null;
+
+            try {
+                HttpResponseMessage response = await _client.GetAsync(Constants.LIST_TODO_URL);
+
+                if(response.IsSuccessStatusCode) {
+                    string content = await response.Content.ReadAsStringAsync();
+                    TodoResponse todoResponse = JsonConvert.DeserializeObject<TodoResponse>(content);
+                    listResponse = todoResponse.TodoList;
+                    return listResponse;
+                }
+
+            } catch(Exception ex) {
+                Debug.WriteLine(ex.Message);
+            }
+
+            return null;
         }
 
     }

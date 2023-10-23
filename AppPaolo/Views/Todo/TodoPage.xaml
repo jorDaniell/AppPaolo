@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="AppPaolo.Views.Todo.TodoPage">
+    <ContentPage.Content>
+        <CollectionView
+            ItemsSource="{Binding TodoList}"
+            SelectedItem="{Binding ElementoSeleccionado}"
+            SelectionChangedCommand="{Binding SelectedItemCommand}"
+            SelectionChangedCommandParameter="{Binding ElementoSeleccionado.Name}"
+            SelectionMode="Single">
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid
+                        Padding="10"
+                        ColumnDefinitions="*, auto"
+                        BackgroundColor="{Binding Color}">
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition
+                                Height="30" />
+                            <RowDefinition
+                                Height="20" />
+                        </Grid.RowDefinitions>
+
+                        <Label
+                            Text="{Binding Name}"
+                            FontAttributes="Bold"
+                            FontSize="20" />
+                        <Label
+                            Grid.Column="1"
+                            Text="{Binding Year}" />
+                        <Label
+                            Grid.Row="1"
+                            Text="{Binding PantoneValue}" />
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </ContentPage.Content>
+</ContentPage>
